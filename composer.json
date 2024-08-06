@@ -1,14 +1,19 @@
 {
-    "name": "swooletw/hyperf-packages",
-    "type": "library",
-    "description": "The pakcages for Hyperf maintained by SwooleTW.",
+    "name": "swooletw/hyperf-dispatcher",
+    "description": "The dispatcher package for Hyperf.",
     "license": "MIT",
     "keywords": [
         "php",
         "hyperf",
-        "packages",
-        "swoole"
+        "dispatcher",
+        "middleware",
+        "swoole",
+        "larvel"
     ],
+    "support": {
+        "issues": "https://github.com/swooletw/hyperf-packages/issues",
+        "source": "https://github.com/swooletw/hyperf-packages"
+    },
     "authors": [
         {
             "name": "Albert Chen",
@@ -16,120 +21,27 @@
             "homepage": "https://albert-chen.com"
         }
     ],
-    "support": {
-        "issues": "https://github.com/swooletw/hyperf-packages/issues",
-        "source": "https://github.com/swooletw/hyperf-packages"
+    "require": {
+        "php": "^8.1",
+        "hyperf/context": "~3.1.0",
+        "hyperf/dispatcher": "~3.1.0",
+        "hyperf/pipeline": "~3.1.0"
     },
     "autoload": {
         "psr-4": {
-            "SwooleTW\\Hyperf\\": "src/framework/src/",
-            "SwooleTW\\Hyperf\\Auth\\": "src/auth/src/",
-            "SwooleTW\\Hyperf\\Cache\\": "src/cache/src/",
-            "SwooleTW\\Hyperf\\Config\\": "src/config/src/",
-            "SwooleTW\\Hyperf\\Container\\": "src/container/src/",
-            "SwooleTW\\Hyperf\\Cookie\\": "src/cookie/src/",
-            "SwooleTW\\Hyperf\\Encryption\\": "src/encryption/src/",
-            "SwooleTW\\Hyperf\\Event\\": "src/event/src/",
-            "SwooleTW\\Hyperf\\Foundation\\": "src/foundation/src/",
-            "SwooleTW\\Hyperf\\Hashing\\": "src/hashing/src/",
-            "SwooleTW\\Hyperf\\JWT\\": "src/jwt/src/",
-            "SwooleTW\\Hyperf\\Log\\": "src/log/src/",
-            "SwooleTW\\Hyperf\\ObjectPool\\": "src/object-pool/src/",
-            "SwooleTW\\Hyperf\\Router\\": "src/router/src/",
-            "SwooleTW\\Hyperf\\Support\\": "src/support/src/"
-        },
-        "files": [
-            "src/auth/src/Functions.php",
-            "src/cache/src/Functions.php",
-            "src/event/src/Functions.php",
-            "src/foundation/src/helpers.php",
-            "src/router/src/Functions.php",
-            "src/support/src/helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "SwooleTW\\Hyperf\\Tests\\": "tests/"
+            "SwooleTW\\Hyperf\\Dispatcher\\": "src/"
         }
-    },
-    "require": {
-        "php": ">=8.1",
-        "ext-hash": "*",
-        "ext-mbstring": "*",
-        "ext-openssl": "*",
-        "hyperf/async-queue": "~3.1.0",
-        "hyperf/cache": "~3.1.0",
-        "hyperf/command": "~3.1.0",
-        "hyperf/config": "~3.1.0",
-        "hyperf/crontab": "~3.1.0",
-        "hyperf/db-connection": "~3.1.0",
-        "hyperf/engine": "^2.10",
-        "hyperf/framework": "~3.1.0",
-        "hyperf/guzzle": "~3.1.0",
-        "hyperf/http-server": "~3.1.0",
-        "hyperf/memory": "~3.1.0",
-        "hyperf/process": "~3.1.0",
-        "hyperf/signal": "~3.1.0",
-        "hyperf/translation": "~3.1.0",
-        "laravel/serializable-closure": "^1.3",
-        "lcobucci/jwt": "^5.0",
-        "nesbot/carbon": "^2.16",
-        "ramsey/uuid": "^4.7",
-        "symfony/error-handler": "^6.3",
-        "monolog/monolog": "^3.1"
-    },
-    "replace": {
-        "swooletw/hyperf-auth": "self.version",
-        "swooletw/hyperf-cache": "self.version",
-        "swooletw/hyperf-config": "self.version",
-        "swooletw/hyperf-container": "self.version",
-        "swooletw/hyperf-cookie": "self.version",
-        "swooletw/hyperf-encryption": "self.version",
-        "swooletw/hyperf-event": "self.version",
-        "swooletw/hyperf-framework": "self.version",
-        "swooletw/hyperf-foundation": "self.version",
-        "swooletw/hyperf-hashing": "self.version",
-        "swooletw/hyperf-jwt": "self.version",
-        "swooletw/hyperf-log": "self.version",
-        "swooletw/hyperf-object-pool": "self.version",
-        "swooletw/hyperf-router": "self.version",
-        "swooletw/hyperf-support": "self.version"
-    },
-    "suggest": {
-        "hyperf/redis": "Required to use redis driver. (^3.1).",
-        "hyperf/session": "Required to use session guard. (^3.1).",
-        "friendsofhyperf/tinker": "Required to use the tinker console command (^3.1)."
-    },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "3.35.1",
-        "hyperf/redis": "~3.1.0",
-        "mockery/mockery": "^1.5.1",
-        "phpunit/phpunit": "^10.0.7",
-        "swoole/ide-helper": "~5.1.0"
-    },
-    "config": {
-        "sort-packages": true
     },
     "extra": {
         "hyperf": {
-            "config": [
-                "SwooleTW\\Hyperf\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Auth\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Cache\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Cookie\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Config\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Encryption\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Event\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Foundation\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Hashing\\ConfigProvider",
-                "SwooleTW\\Hyperf\\JWT\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Log\\ConfigProvider",
-                "SwooleTW\\Hyperf\\Router\\ConfigProvider"
-            ]
+            "config": "SwooleTW\\Hyperf\\Dispatcher\\ConfigProvider"
         },
         "branch-alias": {
-            "dev-main": "3.1-dev"
+            "dev-master": "3.1-dev"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev"
 }
